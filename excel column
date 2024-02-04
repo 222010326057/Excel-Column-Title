@@ -1,0 +1,16 @@
+def convertToTitle(A):
+    result = ""
+    while A > 0:
+        # Adjust A to start from 0 (A = 1 -> A = 0)
+        A -= 1
+        # Get the remainder when dividing by 26
+        remainder = A % 26
+        # Append the corresponding character to the result
+        result = chr(remainder + ord('A')) + result
+        # Update A to the quotient when dividing by 26
+        A //= 26
+    return result
+
+# Test cases
+print(convertToTitle(1))   # Output: "A"
+print(convertToTitle(28))  # Output: "AB"
